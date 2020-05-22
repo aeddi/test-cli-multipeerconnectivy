@@ -3,13 +3,13 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-		if (argc > 1 && !strcmp(argv[1], "host")) {
-			[[MPCManager alloc] hostWithDisplayName:@"cli-host"];
-		} else {
-			[[MPCManager alloc] joinWithDisplayName:@"cli-guest"];
-		}
+        if (argc > 1 && !strcmp(argv[1], "host")) {
+            [[MPCManager alloc] hostWithDisplayName:@"cli-host"];
+        } else {
+            [[MPCManager alloc] joinWithDisplayName:@"cli-guest"];
+        }
 
-		dispatch_main();
+        [[NSRunLoop currentRunLoop] run];
     }
     return 0;
 }
